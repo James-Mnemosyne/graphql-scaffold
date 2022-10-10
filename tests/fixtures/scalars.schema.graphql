@@ -1,0 +1,14 @@
+type SomethingResult {
+  str: String!
+}
+
+type Query {
+  getSomething(
+    optStr: String
+    str: String!
+    addressEmail: String!
+    url: String!
+    numFloat: Float!
+    numInt: Int!
+  ): SomethingResult!
+}
