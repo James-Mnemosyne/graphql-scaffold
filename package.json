@@ -1,13 +1,13 @@
 {
   "name": "gql-test-generator",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Forked from graphql-codegen-typescript-validation-schema. Getting something together to generate smoke tests automatically across resolvers.",
   "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "prettier": "prettier --write .",
     "test": "jest testing/tests",
-    "publish": "npm run prettier && npm run test && npm run build && npm publish"
+    "prePublish": "npm run prettier && npm run test && npm run build"
   },
   "keywords": [
     "graphql",
