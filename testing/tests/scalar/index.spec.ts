@@ -1,4 +1,4 @@
-import { generateTypes } from '../../../src/index';
+import { generateTypes } from '../../../src/generateTypes';
 import * as fs from 'fs';
 
 describe('Query', () => {
