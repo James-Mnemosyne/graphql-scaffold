@@ -4,7 +4,8 @@ import { FixtureNode, FixtureNodeVariation, FunctionFixtureNode } from '../../ty
 
 export function generateFixturesForFunctionFixtureNode(
   node: FunctionFixtureNode,
-  fixtureNodes: Record<string, FixtureNode>
+  fixtureNodes: Record<string, FixtureNode>,
+  maxFixtures: number,
 ) {
   if (node.variation !== FixtureNodeVariation.FunctionFixtureNode) {
     throw new Error(`Cannot use generateFixturesForFunctionFixtureNode with type ${node.variation}.`);
@@ -12,12 +13,9 @@ export function generateFixturesForFunctionFixtureNode(
 
   const fieldVariants = {};
   node.inputs.forEach((input) => {
-    fieldVariants[input.name] = generateFixtures(input, fixtureNodes);
+    fieldVariants[input.name] = generateFixtures(input, fixtureNodes, maxFixtures);
   });
-  console.log('generateFixturesForFunctionFixtureNode0', fieldVariants);
   const results = buildObjectVariants(fieldVariants);
-  console.log('generateFixturesForFunctionFixtureNode1', results.length);
-  console.log('generateFixturesForFunctionFixtureNode2', results);
 
   return filterDefinedIfNotNullable(node, results);
 }

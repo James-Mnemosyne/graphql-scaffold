@@ -3,6 +3,7 @@ export interface Config {
   typeFilePath?: string;
   schemaFilePath: string;
   resolverFilePath: string;
+  maxFixtures?: number;
 }
 
 export enum FixtureNodeVariation {

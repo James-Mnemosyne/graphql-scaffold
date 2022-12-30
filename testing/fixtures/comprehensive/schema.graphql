@@ -1,0 +1,21 @@
+enum SomethingEnum {
+  Something0
+  Something1
+  Something2
+}
+
+input SomethingInput {
+  value0: SomethingEnum
+  value1: String
+  value2: Int
+  value3: Float
+  value4Email: String!
+}
+
+type SomethingResult {
+  str: String!
+}
+
+type Query {
+  getSomething(input0: SomethingInput!, input1: SomethingInput): SomethingResult
+}

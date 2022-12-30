@@ -2,7 +2,7 @@ import { filterDefinedIfNotNullable } from '../utils';
 import { generateFixtures } from '..';
 import { FixtureNode, FixtureNodeVariation, ScalarFixtureNode } from '../../types';
 
-export function generateFixturesForScalarNode(node: ScalarFixtureNode, fixtureNodes: Record<string, FixtureNode>) {
+export function generateFixturesForScalarNode(node: ScalarFixtureNode, fixtureNodes: Record<string, FixtureNode>, maxFixtures: number) {
   if (node.variation !== FixtureNodeVariation.ScalarFixtureNode) {
     throw new Error(`Cannot use generateFixturesForScalarNode with type ${node.variation}.`);
   }
@@ -10,7 +10,6 @@ export function generateFixturesForScalarNode(node: ScalarFixtureNode, fixtureNo
   const lowercaseScalarName = node.scalarName.toLowerCase();
   const lowercaseName = node.name.toLowerCase();
   const results = [undefined, null];
-  console.log('scalar', lowercaseScalarName);
   switch (lowercaseScalarName) {
     case 'string':
       results.push(...['', 'random string']);
@@ -59,7 +58,7 @@ export function generateFixturesForScalarNode(node: ScalarFixtureNode, fixtureNo
   const scalarName = node.scalarName;
 
   if (fixtureNodes[scalarName]) {
-    return filterDefinedIfNotNullable(node, generateFixtures(fixtureNodes[scalarName], fixtureNodes));
+    return filterDefinedIfNotNullable(node, generateFixtures(fixtureNodes[scalarName], fixtureNodes, maxFixtures));
   }
 
   throw new Error(`Unable to find existing fixutre node for scalar type ${scalarName}`);

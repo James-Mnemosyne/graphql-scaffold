@@ -42,7 +42,7 @@ export async function generateTypes(config: Config): Promise<string> {
   const baseNode =
     queryNode?.fields?.find((field) => field.name === config.resolverName) ??
     mutationNode?.fields?.find((field) => field.name === config.resolverName);
-  const fixtures = generateFixtures(baseNode, fixtureNodes);
+  const fixtures = generateFixtures(baseNode, fixtureNodes, config.maxFixtures ?? 100);
 
   const result = getTests(fixtures, config);
   console.log(result);
