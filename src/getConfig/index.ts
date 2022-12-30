@@ -1,7 +1,3 @@
-import * as graphql from 'graphql';
-import { loadSchema } from '@graphql-tools/load';
-import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
-
 import * as fs from 'fs';
 import { Config } from '../types';
 import * as yup from 'yup';
@@ -19,23 +15,33 @@ This file should be in JSON format, with the following type:
 }`;
 
 function getError(extension: string) {
-  return error + `
+  return (
+    error +
+    `
 
 ${extension}.
 `
+  );
 }
 
 function getRequiredString(name: string) {
-  return yup.string().min(1, getError(`${name} must be at least 1 character.`)).defined(getError(`${name} is not defined.`)).required(getError(`${name} is required.`))
+  return yup
+    .string()
+    .min(1, getError(`${name} must be at least 1 character.`))
+    .defined(getError(`${name} is not defined.`))
+    .required(getError(`${name} is required.`));
 }
 
-const configSchema = yup.object({
-  resolverName: getRequiredString('resolverName'),
-  schemaFilePath: getRequiredString('schemaFilePath'),
-  resolverFilePath: getRequiredString('resolverFilePath'),
-  typeFilePath: yup.string().min(1).optional(),
-  maxFixtures: yup.number().optional(),
-}).defined().required();
+const configSchema = yup
+  .object({
+    resolverName: getRequiredString('resolverName'),
+    schemaFilePath: getRequiredString('schemaFilePath'),
+    resolverFilePath: getRequiredString('resolverFilePath'),
+    typeFilePath: yup.string().min(1).optional(),
+    maxFixtures: yup.number().optional(),
+  })
+  .defined()
+  .required();
 
 export function getConfig(): Config {
   const exists = fs.existsSync('.gqlTestGenerator.json');

@@ -8,10 +8,11 @@ async function run() {
   await generateTypes(config);
 }
 
-run().then(() => {
-  process.exit(0);
-})
-.catch(error => {
-  console.error(error);
-  process.exit(1);
-});
+run()
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
