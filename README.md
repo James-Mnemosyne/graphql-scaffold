@@ -80,10 +80,16 @@ add a .gqlTestGenerator.json file, containing the following
 }
 ```
 
+Add a script to your package.json:
+
+```
+  "generateTests": "gql-test-generator",
+```
+
 And run (for npm):
 
 ```
-npm run gql-test-generator
+npm run generateTests
 ```
 
 And you should have a newly output suite of fixture tests.
