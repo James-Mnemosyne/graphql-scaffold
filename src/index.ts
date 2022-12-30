@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { generateTypes } from 'generateTypes';
-import { getConfig } from 'getConfig';
+import { generateTypes } from './generateTypes';
+import { getConfig } from './getConfig';
 
 async function run() {
   const config = getConfig();
