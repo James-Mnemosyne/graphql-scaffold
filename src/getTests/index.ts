@@ -14,12 +14,30 @@ function getTest(fixture: any, index: number, config: Config) {
     .join('');
 }
 
+
+const enumRegex = /123GeneratedEnumStart-[a-zA-Z0-9]*\.[a-zA-Z0-9]*-321GeneratedEnumEnd/g;
+
+function getEnums(fixtures: any[]): string[] {
+  const json = JSON.stringify(fixtures);
+  const matches = json.match(enumRegex)?.map((match) => match.split('123GeneratedEnumStart-')
+  .join('')
+  .split('-321GeneratedEnumEnd')
+  .join('')
+  .split('.')[0]
+  ) ?? [];
+  return Array.from(new Set<string>(matches));
+
+}
+
 // TODO (Orange): update to host mockGraphQLResolveInfo in other file/do something else.
 export function getTests(fixtures: any[], config: Config) {
+  const enums = getEnums(fixtures);
+  const enumImports = enums?.length ? `import { ${enums.join(', ')} } from '${config.typeFilePath}';\n` : ''
   return (
     `
 import { GraphQLResolveInfo } from 'graphql';
-import { ${config.resolverName} } from '${config.resolverFilePath}'; // TODO: resolverPath
+import { ${config.resolverName} } from '${config.resolverFilePath}';
+${enumImports}
 
 // We never actually use the info object.
 export const mockGraphQLResolveInfo = {

@@ -3,7 +3,8 @@
 exports[`Query with only basic object 1`] = `
 "
 import { GraphQLResolveInfo } from 'graphql';
-import { getSomething } from './testing/results/scalar/index.ts'; // TODO: resolverPath
+import { getSomething } from './testing/results/scalar/index.ts';
+
 
 // We never actually use the info object.
 export const mockGraphQLResolveInfo = {

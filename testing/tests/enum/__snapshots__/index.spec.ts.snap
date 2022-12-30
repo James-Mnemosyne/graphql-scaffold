@@ -3,7 +3,9 @@
 exports[`Query with only basic enum 1`] = `
 "
 import { GraphQLResolveInfo } from 'graphql';
-import { getSomething } from './testing/results/enum/index.ts'; // TODO: resolverPath
+import { getSomething } from './testing/results/enum/index.ts';
+import { SomethingEnum } from './testing/fixtures/types.generated.ts';
+
 
 // We never actually use the info object.
 export const mockGraphQLResolveInfo = {
