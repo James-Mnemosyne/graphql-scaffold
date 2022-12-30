@@ -1,4 +1,3 @@
-
 import { GraphQLResolveInfo } from 'graphql';
 import { getSomething } from './testing/results/scalar/index.ts'; // TODO: resolverPath
 
@@ -26,36 +25,27 @@ describe('getSomething smoke tests', () => {
     // Do something here.
   });
 
-    
   it('case0', async () => {
-    const params = {"strategyKey":"","something":{"str":""}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    const params = { strategyKey: '', something: { str: '' } };
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo);
     expect(result).toMatchSnapshot();
   });
-  
-
 
   it('case1', async () => {
-    const params = {"strategyKey":"","something":{"str":"random string"}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    const params = { strategyKey: '', something: { str: 'random string' } };
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo);
     expect(result).toMatchSnapshot();
   });
-  
-
 
   it('case2', async () => {
-    const params = {"strategyKey":"random string","something":{"str":""}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    const params = { strategyKey: 'random string', something: { str: '' } };
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo);
     expect(result).toMatchSnapshot();
   });
-  
-
 
   it('case3', async () => {
-    const params = {"strategyKey":"random string","something":{"str":"random string"}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    const params = { strategyKey: 'random string', something: { str: 'random string' } };
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo);
     expect(result).toMatchSnapshot();
   });
-  
-
 });

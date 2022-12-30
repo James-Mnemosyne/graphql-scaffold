@@ -19,7 +19,7 @@ export function resolveEnumTypeDefinition(node: EnumTypeDefinitionNode): EnumFix
     variation: FixtureNodeVariation.EnumFixtureNode,
     name: node.name.value,
     keys: node.values.map((node) => resolveEnumValueDefinition(node)),
-  }
+  };
 
   return result;
 }

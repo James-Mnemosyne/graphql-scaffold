@@ -2,7 +2,11 @@ import { filterDefinedIfNotNullable } from '../utils';
 import { generateFixtures } from '..';
 import { FixtureNode, FixtureNodeVariation, ScalarFixtureNode } from '../../types';
 
-export function generateFixturesForScalarNode(node: ScalarFixtureNode, fixtureNodes: Record<string, FixtureNode>, maxFixtures: number) {
+export function generateFixturesForScalarNode(
+  node: ScalarFixtureNode,
+  fixtureNodes: Record<string, FixtureNode>,
+  maxFixtures: number
+) {
   if (node.variation !== FixtureNodeVariation.ScalarFixtureNode) {
     throw new Error(`Cannot use generateFixturesForScalarNode with type ${node.variation}.`);
   }
@@ -16,28 +20,14 @@ export function generateFixturesForScalarNode(node: ScalarFixtureNode, fixtureNo
       if (lowercaseName.includes('email')) {
         results.push(...['james@bob.edu']);
       }
-      if (
-        lowercaseName.includes('url')
-      ) {
-        results.push(
-          ...['http://www.google.com']
-        );
+      if (lowercaseName.includes('url')) {
+        results.push(...['http://www.google.com']);
       }
-      if (
-        lowercaseName.includes('image') ||
-        lowercaseName.includes('picture') ||
-        lowercaseName.includes('photo')
-      ) {
-        results.push(
-          ...['http://www.google.com/thing.png']
-        );
+      if (lowercaseName.includes('image') || lowercaseName.includes('picture') || lowercaseName.includes('photo')) {
+        results.push(...['http://www.google.com/thing.png']);
       }
-      if (
-        lowercaseName.includes('video')
-      ) {
-        results.push(
-          ...['http://www.google.com/thing.mp4']
-        );
+      if (lowercaseName.includes('video')) {
+        results.push(...['http://www.google.com/thing.mp4']);
       }
       return filterDefinedIfNotNullable(node, results);
     case 'number':

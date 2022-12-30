@@ -5,7 +5,7 @@ import { FixtureNode, FixtureNodeVariation, FunctionFixtureNode } from '../../ty
 export function generateFixturesForFunctionFixtureNode(
   node: FunctionFixtureNode,
   fixtureNodes: Record<string, FixtureNode>,
-  maxFixtures: number,
+  maxFixtures: number
 ) {
   if (node.variation !== FixtureNodeVariation.FunctionFixtureNode) {
     throw new Error(`Cannot use generateFixturesForFunctionFixtureNode with type ${node.variation}.`);

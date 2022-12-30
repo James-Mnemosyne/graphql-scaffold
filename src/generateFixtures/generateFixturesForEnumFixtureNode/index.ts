@@ -1,8 +1,6 @@
 import { EnumFixtureNode, FixtureNodeVariation } from '../../types';
 
-export function generateFixturesForEnumFixtureNode(
-  node: EnumFixtureNode,
-): any[] {
+export function generateFixturesForEnumFixtureNode(node: EnumFixtureNode): any[] {
   if (node.variation !== FixtureNodeVariation.EnumFixtureNode) {
     throw new Error(`Cannot use generateFixturesForEnumFixtureNode with type ${node.variation}.`);
   }

@@ -1,4 +1,3 @@
-
 import { GraphQLResolveInfo } from 'graphql';
 import { getSomething } from './testing/results/enum/index.ts'; // TODO: resolverPath
 
@@ -26,28 +25,21 @@ describe('getSomething smoke tests', () => {
     // Do something here.
   });
 
-    
   it('case0', async () => {
-    const params = {"thing":SomethingEnum.Something0};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    const params = { thing: SomethingEnum.Something0 };
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo);
     expect(result).toMatchSnapshot();
   });
-  
-
 
   it('case1', async () => {
-    const params = {"thing":SomethingEnum.Something1};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    const params = { thing: SomethingEnum.Something1 };
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo);
     expect(result).toMatchSnapshot();
   });
-  
-
 
   it('case2', async () => {
-    const params = {"thing":SomethingEnum.Something2};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    const params = { thing: SomethingEnum.Something2 };
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo);
     expect(result).toMatchSnapshot();
   });
-  
-
 });

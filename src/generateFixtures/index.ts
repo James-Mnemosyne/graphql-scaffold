@@ -10,14 +10,18 @@ function compress(fixtures: any[], maxFixtures: number): any[] {
   }
 
   const results: any[] = [];
-  for (let index = 0; index < fixtures.length; index += (fixtures.length / (maxFixtures - 1))) {
+  for (let index = 0; index < fixtures.length; index += fixtures.length / (maxFixtures - 1)) {
     const newValue = fixtures[Math.floor(index)];
     results.push(newValue);
   }
   return results;
 }
 
-export function generateFixtures(node: FixtureNode, fixtureNodes: Record<string, FixtureNode>, maxFixtures: number): any[] {
+export function generateFixtures(
+  node: FixtureNode,
+  fixtureNodes: Record<string, FixtureNode>,
+  maxFixtures: number
+): any[] {
   switch (node.variation) {
     case FixtureNodeVariation.ScalarFixtureNode:
       const scalarResults = generateFixturesForScalarNode(node, fixtureNodes, maxFixtures);
