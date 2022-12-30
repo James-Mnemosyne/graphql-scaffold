@@ -56,11 +56,11 @@ export function generateFixturesForScalarNode(node: ScalarFixtureNode, fixtureNo
       return filterDefinedIfNotNullable(node, results);
   }
 
-  const name = node.name;
+  const scalarName = node.scalarName;
 
-  if (fixtureNodes[name]) {
-    return filterDefinedIfNotNullable(node, generateFixtures(fixtureNodes[name], fixtureNodes));
+  if (fixtureNodes[scalarName]) {
+    return filterDefinedIfNotNullable(node, generateFixtures(fixtureNodes[scalarName], fixtureNodes));
   }
 
-  throw new Error(`Unable to find existing fixutre node for scalar type ${name}`);
+  throw new Error(`Unable to find existing fixutre node for scalar type ${scalarName}`);
 }

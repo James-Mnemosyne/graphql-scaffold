@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Query with only basic object 1`] = `
-"
 import { GraphQLResolveInfo } from 'graphql';
 import { getSomething } from './testing/results/scalar/index.ts'; // TODO: resolverPath
 
@@ -62,5 +59,3 @@ describe('getSomething smoke tests', () => {
   
 
 });
-"
-`;
