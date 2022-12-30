@@ -46,6 +46,7 @@ export type ObjectFixtureNode = FixtureAttributes & {
 
 export type EnumFixtureNode = FixtureAttributes & {
   variation: FixtureNodeVariation.EnumFixtureNode;
+  keys: string[];
 };
 
 export type UnionFixtureNode = FixtureAttributes & {

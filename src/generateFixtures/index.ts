@@ -1,4 +1,5 @@
 import { FixtureNode, FixtureNodeVariation } from '../types';
+import { generateFixturesForEnumFixtureNode } from './generateFixturesForEnumFixtureNode';
 import { generateFixturesForFunctionFixtureNode } from './generateFixturesForFunctionFixtureNode';
 import { generateFixturesForObjectFixtureNode } from './generateFixturesForObjectFixtureNode';
 import { generateFixturesForScalarNode } from './generateFixturesForScalarNode';
@@ -12,6 +13,8 @@ export function generateFixtures(node: FixtureNode, fixtureNodes: Record<string,
       return generateFixturesForFunctionFixtureNode(node, fixtureNodes);
     case FixtureNodeVariation.ObjectFixtureNode:
       return generateFixturesForObjectFixtureNode(node, fixtureNodes);
+    case FixtureNodeVariation.EnumFixtureNode:
+      return generateFixturesForEnumFixtureNode(node);
     default:
       throw new Error(`Unsupported generic fixture type generation for ${node.variation}.`);
   }

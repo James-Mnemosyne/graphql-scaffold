@@ -7,7 +7,7 @@ function getTest(fixture: any, index: number, config: Config) {
     const result = await ${config.resolverName}({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  `;
+  `.split('"123GeneratedEnumStart-').join('').split('-321GeneratedEnumEnd"').join('');
 }
 
 // TODO (Orange): update to host mockGraphQLResolveInfo in other file/do something else.
