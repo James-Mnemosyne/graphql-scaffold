@@ -1,6 +1,6 @@
 {
   "name": "gql-test-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Forked from graphql-codegen-typescript-validation-schema. Getting something together to generate smoke tests automatically across resolvers.",
   "main": "dist/src/index.js",
   "scripts": {
@@ -46,5 +46,7 @@
   "peerDependencies": {
     "graphql": "^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"
   },
-  "bin": "dist/src/index.js"
+  "bin": {
+    "gql-test-generator": "dist/src/index.js"
+  }
 }
