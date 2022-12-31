@@ -5,7 +5,8 @@ function getTest(fixture: any, index: number, config: Config) {
     const params = ${JSON.stringify(fixture)};
     const result = await ${config.resolverName}({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
-  });`.split('"123GeneratedEnumStart-')
+  });`
+    .split('"123GeneratedEnumStart-')
     .join('')
     .split('-321GeneratedEnumEnd"')
     .join('');

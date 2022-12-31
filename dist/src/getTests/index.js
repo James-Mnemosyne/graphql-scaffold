@@ -2,7 +2,7 @@
 exports.__esModule = true;
 exports.getTests = void 0;
 function getTest(fixture, index, config) {
-    return "\n  it('case".concat(index, "', async () => {\n    const params = ").concat(JSON.stringify(fixture), ";\n    const result = await ").concat(config.resolverName, "({}, params, undefined, mockGraphQLResolveInfo)\n    expect(result).toMatchSnapshot();\n  });\n")
+    return "  it('case".concat(index, "', async () => {\n    const params = ").concat(JSON.stringify(fixture), ";\n    const result = await ").concat(config.resolverName, "({}, params, undefined, mockGraphQLResolveInfo)\n    expect(result).toMatchSnapshot();\n  });")
         .split('"123GeneratedEnumStart-')
         .join('')
         .split('-321GeneratedEnumEnd"')
@@ -22,6 +22,6 @@ function getTests(fixtures, config) {
     var enumImports = (enums === null || enums === void 0 ? void 0 : enums.length) ? "import { ".concat(enums.join(', '), " } from '").concat(config.typeFilePath, "';\n") : '';
     return ("\nimport { GraphQLResolveInfo } from 'graphql';\nimport { ".concat(config.resolverName, " } from '").concat(config.resolverFilePath, "';\n").concat(enumImports, "\n\n// We never actually use the info object.\nexport const mockGraphQLResolveInfo = {\n  fieldName: '',\n  fieldNodes: [],\n  returnType: undefined,\n  parentType: undefined,\n  path: undefined,\n  schema: undefined,\n  fragments: undefined,\n  rootValue: undefined,\n  operation: undefined,\n  variableValues: {},\n  cacheControl: undefined,\n} as unknown as GraphQLResolveInfo;\n\ndescribe('").concat(config.resolverName, " smoke tests', () => {\n  beforeAll(() => {\n    // Do something here.\n  });\n\n  beforeEach(() => {\n    // Do something here.\n  });\n\n") +
         fixtures.map(function (fixture, index) { return getTest(fixture, index, config); }).join('\n\n') +
-        "\n\n});\n");
+        "\n});\n");
 }
 exports.getTests = getTests;
