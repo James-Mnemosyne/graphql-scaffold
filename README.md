@@ -92,4 +92,66 @@ And run (for npm):
 npm run generateTests
 ```
 
-And you should have a newly output suite of fixture tests.
+And you should have a newly output suite of fixture tests, such as:
+
+```
+
+import { GraphQLResolveInfo } from 'graphql';
+import { getSomething } from './directoryOfResolver/resolverFile.ts';
+import { SomethingEnum } from './generatedTypesPath/types.generated.ts';
+
+...
+
+describe('getSomething smoke tests', () => {
+  beforeAll(() => {
+    // Do something here.
+  });
+
+  beforeEach(() => {
+    // Do something here.
+  });
+
+
+  it('case0', async () => {
+    const params = {"input0":{"value0":SomethingEnum.Something0,"value4Email":""},"input1":{"value0":SomethingEnum.Something0,"value4Email":""}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+
+
+  it('case1', async () => {
+    const params = {"input0":{"value0":SomethingEnum.Something0,"value3":0,"value4Email":"random string"},"input1":{"value0":SomethingEnum.Something0,"value3":0,"value4Email":"random string"}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+
+
+  it('case2', async () => {
+    const params = {"input0":{"value0":SomethingEnum.Something0,"value2":null,"value3":-1000.5,"value4Email":""},"input1":{"value0":SomethingEnum.Something0,"value2":null,"value3":-1000.5,"value4Email":""}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+
+
+  it('case3', async () => {
+    const params = {"input0":{"value0":SomethingEnum.Something0,"value2":-1000,"value4Email":"james@bob.edu"},"input1":{"value0":SomethingEnum.Something0,"value2":-1000,"value4Email":"james@bob.edu"}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+
+
+  it('case4', async () => {
+    const params = {"input0":{"value0":SomethingEnum.Something0,"value2":-1000,"value3":2000345.7898,"value4Email":"random string"},"input1":{"value0":SomethingEnum.Something0,"value2":-1000,"value3":2000345.7898,"value4Email":"random string"}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+...
+
+});
+
+```
