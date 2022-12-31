@@ -44,8 +44,7 @@ export async function generateTypes(config: Config): Promise<string> {
     mutationNode?.fields?.find((field) => field.name === config.resolverName);
   const fixtures = generateFixtures(baseNode, fixtureNodes, config.maxFixtures ?? 100);
 
-  const result = getTests(fixtures, config);
-  console.log(result);
+  const result = getTests(fixtures?.length ? fixtures : [{}], config);
 
   const fileName = getFileName(config);
   fs.writeFileSync(fileName, result);
