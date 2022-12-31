@@ -1,6 +1,7 @@
 import { FixtureNode, FixtureNodeVariation } from '../types';
 import { generateFixturesForEnumFixtureNode } from './generateFixturesForEnumFixtureNode';
 import { generateFixturesForFunctionFixtureNode } from './generateFixturesForFunctionFixtureNode';
+import { generateFixturesForListFixtureNode } from './generateFixturesForListFixtureNode';
 import { generateFixturesForObjectFixtureNode } from './generateFixturesForObjectFixtureNode';
 import { generateFixturesForScalarNode } from './generateFixturesForScalarNode';
 
@@ -35,6 +36,9 @@ export function generateFixtures(
     case FixtureNodeVariation.EnumFixtureNode:
       const enumResults = generateFixturesForEnumFixtureNode(node);
       return compress(enumResults, maxFixtures);
+    case FixtureNodeVariation.ListFixtureNode:
+      const listResults = generateFixturesForListFixtureNode(node, fixtureNodes, maxFixtures);
+      return compress(listResults, maxFixtures);
     default:
       throw new Error(`Unsupported generic fixture type generation for ${node.variation}.`);
   }

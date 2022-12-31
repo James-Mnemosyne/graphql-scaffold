@@ -27,13 +27,13 @@ describe('getSomething smoke tests', () => {
     // Do something here.
   });
 
-    
+
   it('case0', async () => {
     const params = {"str":"","addressEmail":"","url":"","numFloat":-1000.5,"numInt":-1000};
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case1', async () => {
@@ -41,7 +41,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case2', async () => {
@@ -49,7 +49,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case3', async () => {
@@ -57,7 +57,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case4', async () => {
@@ -65,7 +65,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case5', async () => {
@@ -73,7 +73,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case6', async () => {
@@ -81,7 +81,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case7', async () => {
@@ -89,7 +89,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case8', async () => {
@@ -97,7 +97,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case9', async () => {
@@ -105,7 +105,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case10', async () => {
@@ -113,7 +113,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case11', async () => {
@@ -121,7 +121,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case12', async () => {
@@ -129,7 +129,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case13', async () => {
@@ -137,7 +137,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case14', async () => {
@@ -145,7 +145,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case15', async () => {
@@ -153,7 +153,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case16', async () => {
@@ -161,7 +161,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case17', async () => {
@@ -169,7 +169,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case18', async () => {
@@ -177,7 +177,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case19', async () => {
@@ -185,7 +185,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case20', async () => {
@@ -193,7 +193,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case21', async () => {
@@ -201,7 +201,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case22', async () => {
@@ -209,7 +209,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case23', async () => {
@@ -217,7 +217,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case24', async () => {
@@ -225,7 +225,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case25', async () => {
@@ -233,7 +233,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case26', async () => {
@@ -241,7 +241,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case27', async () => {
@@ -249,7 +249,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case28', async () => {
@@ -257,7 +257,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case29', async () => {
@@ -265,7 +265,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case30', async () => {
@@ -273,7 +273,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case31', async () => {
@@ -281,7 +281,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case32', async () => {
@@ -289,7 +289,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case33', async () => {
@@ -297,7 +297,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case34', async () => {
@@ -305,7 +305,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case35', async () => {
@@ -313,7 +313,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case36', async () => {
@@ -321,7 +321,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case37', async () => {
@@ -329,7 +329,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case38', async () => {
@@ -337,7 +337,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case39', async () => {
@@ -345,7 +345,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case40', async () => {
@@ -353,7 +353,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case41', async () => {
@@ -361,7 +361,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case42', async () => {
@@ -369,7 +369,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case43', async () => {
@@ -377,7 +377,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case44', async () => {
@@ -385,7 +385,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case45', async () => {
@@ -393,7 +393,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case46', async () => {
@@ -401,7 +401,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case47', async () => {
@@ -409,7 +409,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case48', async () => {
@@ -417,7 +417,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case49', async () => {
@@ -425,7 +425,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case50', async () => {
@@ -433,7 +433,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case51', async () => {
@@ -441,7 +441,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case52', async () => {
@@ -449,7 +449,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case53', async () => {
@@ -457,7 +457,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case54', async () => {
@@ -465,7 +465,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case55', async () => {
@@ -473,7 +473,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case56', async () => {
@@ -481,7 +481,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case57', async () => {
@@ -489,7 +489,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case58', async () => {
@@ -497,7 +497,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case59', async () => {
@@ -505,7 +505,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case60', async () => {
@@ -513,7 +513,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case61', async () => {
@@ -521,7 +521,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case62', async () => {
@@ -529,7 +529,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case63', async () => {
@@ -537,7 +537,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case64', async () => {
@@ -545,7 +545,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case65', async () => {
@@ -553,7 +553,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case66', async () => {
@@ -561,7 +561,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case67', async () => {
@@ -569,7 +569,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case68', async () => {
@@ -577,7 +577,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case69', async () => {
@@ -585,7 +585,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case70', async () => {
@@ -593,7 +593,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case71', async () => {
@@ -601,7 +601,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case72', async () => {
@@ -609,7 +609,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case73', async () => {
@@ -617,7 +617,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case74', async () => {
@@ -625,7 +625,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case75', async () => {
@@ -633,7 +633,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case76', async () => {
@@ -641,7 +641,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case77', async () => {
@@ -649,7 +649,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case78', async () => {
@@ -657,7 +657,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case79', async () => {
@@ -665,7 +665,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case80', async () => {
@@ -673,7 +673,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case81', async () => {
@@ -681,7 +681,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case82', async () => {
@@ -689,7 +689,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case83', async () => {
@@ -697,7 +697,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case84', async () => {
@@ -705,7 +705,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case85', async () => {
@@ -713,7 +713,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case86', async () => {
@@ -721,7 +721,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case87', async () => {
@@ -729,7 +729,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case88', async () => {
@@ -737,7 +737,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case89', async () => {
@@ -745,7 +745,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case90', async () => {
@@ -753,7 +753,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case91', async () => {
@@ -761,7 +761,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case92', async () => {
@@ -769,7 +769,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case93', async () => {
@@ -777,7 +777,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case94', async () => {
@@ -785,7 +785,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case95', async () => {
@@ -793,7 +793,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case96', async () => {
@@ -801,7 +801,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case97', async () => {
@@ -809,7 +809,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case98', async () => {
@@ -817,6 +817,6 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 });

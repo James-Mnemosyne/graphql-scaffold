@@ -55,6 +55,13 @@ export function buildObjectVariants(fieldVariants: Record<string, any[]>): Recor
   return results ?? [];
 }
 
+export function buildListVariants(entryVariants: any[]): any[] {
+  if (!entryVariants?.length) {
+    return [undefined, null, []];
+  }
+  return [undefined, null, [], entryVariants];
+}
+
 export function filterDefinedIfNotNullable(node: FixtureNode, results: any[]) {
   if (node.defined) {
     return results.filter(Defined);

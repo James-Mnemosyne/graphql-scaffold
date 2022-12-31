@@ -28,13 +28,13 @@ describe('getSomething smoke tests', () => {
     // Do something here.
   });
 
-    
+
   it('case0', async () => {
     const params = {"thing":SomethingEnum.Something0};
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case1', async () => {
@@ -42,7 +42,7 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 
   it('case2', async () => {
@@ -50,6 +50,6 @@ describe('getSomething smoke tests', () => {
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  
+
 
 });

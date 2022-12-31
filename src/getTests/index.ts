@@ -7,7 +7,7 @@ function getTest(fixture: any, index: number, config: Config) {
     const result = await ${config.resolverName}({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
-  `
+`
     .split('"123GeneratedEnumStart-')
     .join('')
     .split('-321GeneratedEnumEnd"')
@@ -61,7 +61,7 @@ describe('${config.resolverName} smoke tests', () => {
     // Do something here.
   });
 
-    ` +
+` +
     fixtures.map((fixture, index) => getTest(fixture, index, config)).join('\n\n') +
     `
 
