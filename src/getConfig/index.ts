@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import { Config } from '../types';
 import * as yup from 'yup';
+import minimist from 'minimist';
 
 const error = `
 This package requires the existence of a .gqlTestGenerator.json file, to specify it's purpose.
@@ -44,6 +45,8 @@ const configSchema = yup
   .required();
 
 export function getConfig(): Config {
+  const args = minimist(process.argv.slice(2));
+  console.log('args', args);
   const exists = fs.existsSync('.gqlTestGenerator.json');
   if (!exists) {
     throw new Error(error);
