@@ -1,6 +1,6 @@
 # gql-test-generator
 
-Graphql codegen plugin for generating fixtures and tests for smoke tests.
+Npm package for generating fixtures and smoke tests for resolvers.
 
 This is not completed yet. Rough timeline:
 
@@ -40,8 +40,6 @@ You can install this package as a dev dep, or you can install it globally.
 `yarn add -D gql-test-generator`
 
 ## Use
-
-Currently, there is no use. Planning to make this a CLI tool.
 
 Assume that you have the following schema:
 
@@ -154,4 +152,18 @@ describe('getSomething smoke tests', () => {
 
 });
 
+```
+
+## Extended Use
+
+The following flags are now available for convenience:
+
+```
+--config // Used to specify a configuation file.
+```
+
+Example:
+
+```
+npm run generateTests -- --config configFiles/graphql/generateTests.json
 ```

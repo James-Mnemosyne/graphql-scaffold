@@ -1,10 +1,10 @@
 import * as fs from 'fs';
 import { Config } from '../types';
 import * as yup from 'yup';
-import minimist from 'minimist';
+import * as minimist from 'minimist';
 
 const error = `
-This package requires the existence of a .gqlTestGenerator.json file, to specify it's purpose.
+This package requires the existence of a .gqlTestGenerator.json file (or file specified via --config flag), to specify it's purpose.
 
 This file should be in JSON format, with the following type:
 {
@@ -46,13 +46,13 @@ const configSchema = yup
 
 export function getConfig(): Config {
   const args = minimist(process.argv.slice(2));
-  console.log('args', args);
-  const exists = fs.existsSync('.gqlTestGenerator.json');
+  const configFilePath = args.config ?? '.gqlTestGenerator.json';
+  const exists = fs.existsSync(configFilePath);
   if (!exists) {
     throw new Error(error);
   }
   // This seems to be expected, but for the life of me, I cannot figure out why.
-  const file = fs.readFileSync('.gqlTestGenerator.json') as unknown as string;
+  const file = fs.readFileSync(configFilePath) as unknown as string;
   const config = JSON.parse(file) as Config;
   configSchema.validateSync(config);
   return config;
