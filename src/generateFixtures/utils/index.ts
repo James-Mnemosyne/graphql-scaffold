@@ -68,3 +68,16 @@ export function filterDefinedIfNotNullable(node: FixtureNode, results: any[]) {
   }
   return results;
 }
+
+export function compress(fixtures: any[], maxFixtures: number): any[] {
+  if (fixtures.length <= maxFixtures) {
+    return fixtures;
+  }
+
+  const results: any[] = [];
+  for (let index = 0; index < fixtures.length; index += fixtures.length / (maxFixtures - 1)) {
+    const newValue = fixtures[Math.floor(index)];
+    results.push(newValue);
+  }
+  return results;
+}

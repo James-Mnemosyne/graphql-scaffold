@@ -1,11 +1,18 @@
 import { Kind, UnionTypeDefinitionNode } from 'graphql';
 
-import { FixtureNode, FunctionFixtureNode } from '../../../types';
+import { FixtureNodeVariation, UnionFixtureNode } from '../../../types';
+import { resolve } from '..';
 
-export function resolveUnionTypeDefinition(node: UnionTypeDefinitionNode): FunctionFixtureNode | FixtureNode {
+export function resolveUnionTypeDefinition(node: UnionTypeDefinitionNode): UnionFixtureNode {
   if (node.kind !== Kind.UNION_TYPE_DEFINITION) {
     throw new Error(`Cannot use resolveUnionTypeDefinition with type ${node.kind}.`);
   }
 
-  throw new Error('resolveUnionTypeDefinition unsupported.');
+  const result: UnionFixtureNode = {
+    variation: FixtureNodeVariation.UnionFixtureNode,
+    name: node.name.value,
+    elements: node.types?.map(resolve) ?? [],
+  };
+
+  return result;
 }

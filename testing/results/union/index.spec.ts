@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Query with only basic object 1`] = `
-"
 import { GraphQLResolveInfo } from 'graphql';
-import { getSomething } from './testing/results/object/index.ts';
+import { getSomething } from './testing/results/union/index.ts';
 
 
 // We never actually use the info object.
@@ -43,16 +40,38 @@ describe('getSomething smoke tests', () => {
   });
 
   it('case2', async () => {
-    const params = {"strategyKey":"random string","something":{"str":""}};
+    const params = {"strategyKey":"","something":{"str":""}};
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
 
   it('case3', async () => {
+    const params = {"strategyKey":"","something":{"str":"random string"}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+  it('case4', async () => {
+    const params = {"strategyKey":"random string","something":{"str":""}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+  it('case5', async () => {
+    const params = {"strategyKey":"random string","something":{"str":"random string"}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+  it('case6', async () => {
+    const params = {"strategyKey":"random string","something":{"str":""}};
+    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
+    expect(result).toMatchSnapshot();
+  });
+
+  it('case7', async () => {
     const params = {"strategyKey":"random string","something":{"str":"random string"}};
     const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
     expect(result).toMatchSnapshot();
   });
 });
-"
-`;

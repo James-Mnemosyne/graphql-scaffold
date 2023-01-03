@@ -4,19 +4,8 @@ import { generateFixturesForFunctionFixtureNode } from './generateFixturesForFun
 import { generateFixturesForListFixtureNode } from './generateFixturesForListFixtureNode';
 import { generateFixturesForObjectFixtureNode } from './generateFixturesForObjectFixtureNode';
 import { generateFixturesForScalarNode } from './generateFixturesForScalarNode';
-
-function compress(fixtures: any[], maxFixtures: number): any[] {
-  if (fixtures.length <= maxFixtures) {
-    return fixtures;
-  }
-
-  const results: any[] = [];
-  for (let index = 0; index < fixtures.length; index += fixtures.length / (maxFixtures - 1)) {
-    const newValue = fixtures[Math.floor(index)];
-    results.push(newValue);
-  }
-  return results;
-}
+import { generateFixturesForUnionNode } from './generateFixturesForUnionNode';
+import { compress } from './utils';
 
 export function generateFixtures(
   node: FixtureNode,
@@ -27,6 +16,9 @@ export function generateFixtures(
     case FixtureNodeVariation.ScalarFixtureNode:
       const scalarResults = generateFixturesForScalarNode(node, fixtureNodes, maxFixtures);
       return compress(scalarResults, maxFixtures);
+    case FixtureNodeVariation.UnionFixtureNode:
+      const unionResults = generateFixturesForUnionNode(node, fixtureNodes, maxFixtures);
+      return compress(unionResults, maxFixtures);
     case FixtureNodeVariation.FunctionFixtureNode:
       const functionResults = generateFixturesForFunctionFixtureNode(node, fixtureNodes, maxFixtures);
       return compress(functionResults, maxFixtures);

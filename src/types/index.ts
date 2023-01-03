@@ -52,7 +52,7 @@ export type EnumFixtureNode = FixtureAttributes & {
 
 export type UnionFixtureNode = FixtureAttributes & {
   variation: FixtureNodeVariation.UnionFixtureNode;
-  elements: string[];
+  elements: FixtureNode[];
 };
 
 export type FunctionFixtureNode = FixtureAttributes & {
