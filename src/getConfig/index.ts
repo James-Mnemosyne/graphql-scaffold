@@ -64,7 +64,7 @@ export function getConfig(): Config {
 
   const resolverFilePath = `${baseFilePath}/resolvers/${endPath}`;
   const resolverTestFilePath = `${baseFilePath}/resolvers/${testEndPath}`;
-  const authorizerFilePath = `${baseFilePath}/authorizers/${testEndPath}`;
+  const authorizerFilePath = `${baseFilePath}/authorizers/${endPath}`;
 
   const exists = fs.existsSync(schemaFilePath);
   if (!exists) {
