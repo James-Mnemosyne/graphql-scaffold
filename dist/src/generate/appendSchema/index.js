@@ -3,12 +3,12 @@ exports.__esModule = true;
 exports.appendSchema = void 0;
 var fs = require('fs');
 var appendImports_1 = require('../../utils/appendImports');
-function getSchemaIndexFlieBody(config) {
+function getSchemaIndexFileBody(config) {
   var resolverName = config.resolverName;
   return 'import '.concat(resolverName, " from './schema.graphql';\n\nexport { ").concat(resolverName, ' };\n');
 }
 function addSchemaIndexFile(config) {
-  var fileBody = getSchemaIndexFlieBody(config);
+  var fileBody = getSchemaIndexFileBody(config);
   fs.writeFileSync(config.schemaIndexFilePath, fileBody);
 }
 function appendSchema(config) {

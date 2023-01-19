@@ -7,7 +7,7 @@ import { generateResolverTestFile } from './generateResolverTestFile';
 export function generate(config: Config) {
   console.log('Starting.');
   appendSchema(config);
-  console.log('Exported schema file.');
+  console.log(`Exported schema file through ${config.schemaIndexFilePath}`);
   generateAuthorizer(config);
   console.log(`Generated authorizer file in ${config.authorizerFilePath}.`);
   generateResolver(config);

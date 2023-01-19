@@ -51,7 +51,7 @@ export function getConfig(): Config {
 
   const baseFilePath = schemaSplit[0];
   const endDirectory = schemaSplit[1].replace(/\/schema.graphql$/, '');
-  const schemaIndexFilePath = schemaFilePath.replace(/\/schema.graphql$/, 'index.ts');
+  const schemaIndexFilePath = schemaFilePath.replace(/\/schema.graphql$/, '/index.ts');
   const endPath = `${endDirectory}/index.ts`;
   // This annoys me, but I also want to one-line it.
   const resolverName = endDirectory.split('/')[endDirectory.split('/').length - 1];

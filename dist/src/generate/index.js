@@ -8,7 +8,7 @@ var generateResolverTestFile_1 = require('./generateResolverTestFile');
 function generate(config) {
   console.log('Starting.');
   (0, appendSchema_1.appendSchema)(config);
-  console.log('Exported schema file.');
+  console.log('Exported schema file through '.concat(config.schemaIndexFilePath));
   (0, generateAuthorizer_1.generateAuthorizer)(config);
   console.log('Generated authorizer file in '.concat(config.authorizerFilePath, '.'));
   (0, generateResolver_1.generateResolver)(config);
