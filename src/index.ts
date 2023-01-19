@@ -4,7 +4,7 @@ import { generate } from './generate';
 import { getConfig } from './getConfig';
 
 async function run() {
-  const config = getConfig();
+  const config = await getConfig();
   await generate(config);
 }
 

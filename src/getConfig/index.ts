@@ -3,13 +3,14 @@ import { Config, ResolverType } from '../types';
 import * as minimist from 'minimist';
 import { getFileConfig } from './getFileConfig';
 import { configSchema } from './configSchema';
+import { getSchemaFilePath } from './getSchemaFilePath';
 
-export function getConfig(): Config {
+export async function getConfig(): Promise<Config> {
   const args = minimist(process.argv.slice(2));
-  const schemaFilePath = args.schemaFilePath;
   const fileConfig = getFileConfig();
+  const schemaFilePath = getSchemaFilePath(fileConfig.baseFilePath, args.resolver.trim());
 
-  const testType = fileConfig.testType ?? 'spec';
+  const testType = fileConfig.testType;
 
   const schemaSplit = schemaFilePath.split('/schemas/');
   if (schemaSplit?.length !== 2) {
@@ -51,6 +52,7 @@ export function getConfig(): Config {
 
   const config: Config = {
     ...fileConfig,
+    // We override this to be the container for the schema directory.
     baseFilePath,
     resolverFilePath,
     resolverTestFilePath,

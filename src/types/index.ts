@@ -8,11 +8,11 @@ export enum ResolverType {
 export interface FileConfig {
   beforeCommands: string[];
   afterCommands: string[];
+  baseFilePath: string;
   testType: string;
 }
 
 export type Config = FileConfig & {
-  baseFilePath: string;
   resolverFilePath: string;
   resolverTestFilePath: string;
   authorizerFilePath: string;

@@ -1,27 +1,25 @@
-'use strict';
+"use strict";
 exports.__esModule = true;
 exports.Defined = exports.IsObjectFixtureNodeOrUndefined = exports.Truthy = void 0;
-var types_1 = require('../../types');
+var types_1 = require("../../types");
 function Truthy(x) {
-  return Boolean(x);
+    return Boolean(x);
 }
 exports.Truthy = Truthy;
 function IsObjectFixtureNode(item) {
-  return (
-    (item === null || item === void 0 ? void 0 : item.variation) === types_1.FixtureNodeVariation.ObjectFixtureNode
-  );
+    return (item === null || item === void 0 ? void 0 : item.variation) === types_1.FixtureNodeVariation.ObjectFixtureNode;
 }
 function IsObjectFixtureNodeOrUndefined(item) {
-  return !Defined(item) || IsObjectFixtureNode(item);
+    return !Defined(item) || IsObjectFixtureNode(item);
 }
 exports.IsObjectFixtureNodeOrUndefined = IsObjectFixtureNodeOrUndefined;
 function Defined(item) {
-  return NotUndefined(item) && NonNull(item);
+    return NotUndefined(item) && NonNull(item);
 }
 exports.Defined = Defined;
 function NotUndefined(item) {
-  return item !== undefined;
+    return item !== undefined;
 }
 function NonNull(item) {
-  return item !== null;
+    return item !== null;
 }
