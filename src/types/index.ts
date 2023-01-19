@@ -1,9 +1,19 @@
+export enum ResolverType {
+  Query = 'Query',
+  Mutation = 'Mutation',
+  Field = 'Field',
+  Unknown = 'Unknown',
+}
+
 export interface Config {
-  resolverName?: string;
-  typeFilePath?: string;
-  schemaFilePath: string;
+  baseFilePath: string;
   resolverFilePath: string;
-  maxFixtures?: number;
+  resolverTestFilePath: string;
+  authorizerFilePath: string;
+  resolverType: string;
+  resolverName: string;
+  schemaIndexFilePath: string;
+  schemaFilePath: string;
 }
 
 export enum FixtureNodeVariation {

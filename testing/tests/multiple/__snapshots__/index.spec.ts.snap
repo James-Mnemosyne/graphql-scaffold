@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Query with only basic object 1`] = `
+"import { AuthenticationContextType } from 'graphql-retail/middleware/authenticate/types';
+
+/**
+ * Authorizer for thing0 query
+ */
+export async function thing0(context: AuthenticationContextType) {
+  // DEAR CODE REVIEWER,
+  // IF YOU ARE SEEING THIS, YOU SHOULD NOT ALLOW THIS THROUGH CODE REVIEW.
+  // THIS IS AN AUTO-GENERATED FUNCTION
+  // AND SHOULD BE REPLACED WITH VALID AUTHENTICATION LOGIC.
+};
+"
+`;
+
+exports[`Query with only basic object 2`] = `
+"import { AuthenticationContextType } from 'graphql-retail/middleware/authenticate/types';
+
+/**
+ * Authorizer for thing1 query
+ */
+export async function thing1(context: AuthenticationContextType) {
+  // DEAR CODE REVIEWER,
+  // IF YOU ARE SEEING THIS, YOU SHOULD NOT ALLOW THIS THROUGH CODE REVIEW.
+  // THIS IS AN AUTO-GENERATED FUNCTION
+  // AND SHOULD BE REPLACED WITH VALID AUTHENTICATION LOGIC.
+};
+"
+`;
+
+exports[`Query with only basic object 3`] = `
+"export * from './thing0';
+export * from './thing1';
+"
+`;
+
+exports[`Query with only basic object 4`] = `
+"export * from './multiple';
+"
+`;
+
+exports[`Query with only basic object 5`] = `
+"export * from './queries';
+"
+`;
+
+exports[`Query with only basic object 6`] = `
+"import { Queries } from 'graphql-retail/types';
+
+/**
+ * thing0 query
+ */
+export const thing0: Queries['thing0'] = async function (
+  _parent,
+  input,
+  _context
+) {
+  // TODO implement
+  console.log('input', input);
+  throw new Error('Unsupported query thing0.')
+};
+"
+`;
+
+exports[`Query with only basic object 7`] = `
+"import { Queries } from 'graphql-retail/types';
+
+/**
+ * thing1 query
+ */
+export const thing1: Queries['thing1'] = async function (
+  _parent,
+  input,
+  _context
+) {
+  // TODO implement
+  console.log('input', input);
+  throw new Error('Unsupported query thing1.')
+};
+"
+`;
+
+exports[`Query with only basic object 8`] = `
+"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'graphql-retail/testing/fixtures/graphql';
+import { thing0 } from '.';
+
+/**
+ * Tests for thing0 query
+ */
+describe('thing0 query', () => {
+  beforeAll(async () => {});
+
+  it('Runs on null input.', async () => {
+    const response = await thing0(
+      {},
+      null, // This is probably not valid input.
+      mockGraphQLResolveContext,
+      mockGraphQLResolveInfo
+    );
+    expect(response).toEqual(null);
+  });
+});
+"
+`;
+
+exports[`Query with only basic object 9`] = `
+"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'graphql-retail/testing/fixtures/graphql';
+import { thing1 } from '.';
+
+/**
+ * Tests for thing1 query
+ */
+describe('thing1 query', () => {
+  beforeAll(async () => {});
+
+  it('Runs on null input.', async () => {
+    const response = await thing1(
+      {},
+      null, // This is probably not valid input.
+      mockGraphQLResolveContext,
+      mockGraphQLResolveInfo
+    );
+    expect(response).toEqual(null);
+  });
+});
+"
+`;
+
+exports[`Query with only basic object 10`] = `
+"export * from './thing0';
+export * from './thing1';
+"
+`;
+
+exports[`Query with only basic object 11`] = `
+"export * from './multiple';
+"
+`;
+
+exports[`Query with only basic object 12`] = `
+"import thing0 from './schema.graphql';
+
+export { thing0 };
+"
+`;
+
+exports[`Query with only basic object 13`] = `
+"import thing1 from './schema.graphql';
+
+export { thing1 };
+"
+`;
+
+exports[`Query with only basic object 14`] = `
+"export * from './thing0';
+export * from './thing1';
+"
+`;
+
+exports[`Query with only basic object 15`] = `
+"export * from './multiple';
+"
+`;
+
+exports[`Query with only basic object 16`] = `
+"export * from './queries';
+"
+`;

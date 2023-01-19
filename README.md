@@ -1,23 +1,20 @@
-# gql-test-generator
+# gql-scaffold
 
-Npm package for generating fixtures and smoke tests for resolvers.
+Npm package for scaffolding files and smoke tests for resolvers.
 
 This is not completed yet. Rough timeline:
 
-- Invented yesterday.
-- Estimated to enter QA by the new year (currently two days away).
-- After that, it will be in alpha.
-- Beta should be available somewhere around Jan 5th.
+- Invented today.
 
 ## Links
 
 ### Github
 
-https://github.com/James-Mnemosyne/gql-test-generator/tree/master
+https://github.com/James-Mnemosyne/gql-scaffold/tree/master
 
 ### NPM
 
-https://www.npmjs.com/package/gql-test-generator
+https://www.npmjs.com/package/gql-scaffold
 
 ## Overview
 
@@ -33,11 +30,11 @@ You can install this package as a dev dep, or you can install it globally.
 
 ### NPM
 
-`npm i --save-dev gql-test-generator`
+`npm i --save-dev gql-scaffold`
 
 ### Yarn
 
-`yarn add -D gql-test-generator`
+`yarn add -D gql-scaffold`
 
 ## Use
 
