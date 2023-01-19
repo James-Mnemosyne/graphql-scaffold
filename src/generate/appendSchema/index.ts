@@ -1,4 +1,3 @@
-
 import * as fs from 'fs';
 import { appendImports } from '../../utils/appendImports';
 import { Config } from '../../types';
@@ -18,6 +17,6 @@ function addSchemaIndexFile(config: Config) {
 }
 
 export function appendSchema(config: Config): void {
-  appendImports(config.schemaFilePath, config)
+  appendImports(config.schemaFilePath, config);
   addSchemaIndexFile(config);
 }

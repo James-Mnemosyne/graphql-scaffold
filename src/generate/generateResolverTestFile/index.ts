@@ -1,4 +1,3 @@
-
 import * as fs from 'fs';
 import { Config } from '../../types';
 
@@ -27,7 +26,6 @@ describe('${resolverName} ${lowercaseResolverType}', () => {
 });
 `;
 }
-
 
 // TODO (orange): re-enable ability to parse schema for better handling.
 export function generateResolverTestFile(config: Config): void {

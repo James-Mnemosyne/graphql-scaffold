@@ -1,10 +1,9 @@
-
 import * as fs from 'fs';
 import { appendImports } from '../../utils/appendImports';
 import { Config, ResolverType } from '../../types';
 
 function getResolverTypeName(resolverType: ResolverType) {
-  return resolverType  === ResolverType.Mutation ? 'Mutations' : resolverType  === ResolverType.Query ? 'Queries' : '';
+  return resolverType === ResolverType.Mutation ? 'Mutations' : resolverType === ResolverType.Query ? 'Queries' : '';
 }
 
 function getResolverBody(config) {
@@ -30,7 +29,7 @@ export const ${resolverName}: ${resolverTypeName}['${resolverName}'] = async fun
 }
 
 export function generateResolver(config: Config): void {
-  appendImports(config.resolverFilePath, config)
+  appendImports(config.resolverFilePath, config);
 
   const resolverBody = getResolverBody(config);
   const fileName = config.resolverFilePath;

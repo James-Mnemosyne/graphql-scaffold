@@ -1,7 +1,6 @@
-
 import * as fs from 'fs';
 import { appendImports } from '../../utils/appendImports';
-import { Config, } from '../../types';
+import { Config } from '../../types';
 
 function getAuthorizerBody(config) {
   const resolverName = config.resolverName;
@@ -18,12 +17,11 @@ export async function ${resolverName}(context: AuthenticationContextType) {
   // THIS IS AN AUTO-GENERATED FUNCTION
   // AND SHOULD BE REPLACED WITH VALID AUTHENTICATION LOGIC.
 };
-`
-
+`;
 }
 
 export function generateAuthorizer(config: Config): void {
-  appendImports(config.authorizerFilePath, config)
+  appendImports(config.authorizerFilePath, config);
 
   const resolverBody = getAuthorizerBody(config);
   const fileName = config.authorizerFilePath;
