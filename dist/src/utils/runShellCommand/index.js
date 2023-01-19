@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -37,35 +36,28 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var runAfterCommands_1 = require("commands/runAfterCommands");
-var runBeforeCommands_1 = require("commands/runBeforeCommands");
-var generate_1 = require("./generate");
-var getConfig_1 = require("./getConfig");
-function run() {
+exports.runShellCommand = void 0;
+var util_1 = require("util");
+var child_process_1 = require("child_process");
+var exec = (0, util_1.promisify)(child_process_1.exec);
+function getError(command, error) {
+    return "Error:\nCommand:\n  ".concat(command, "\nFailed with Error:\n  ").concat(error, "\n");
+}
+function runShellCommand(command) {
     return __awaiter(this, void 0, void 0, function () {
-        var config;
+        var result, error;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    config = (0, getConfig_1.getConfig)();
-                    return [4 /*yield*/, (0, runBeforeCommands_1.runBeforeCommands)(config)];
+                case 0: return [4 /*yield*/, exec(command)];
                 case 1:
-                    _a.sent();
-                    return [4 /*yield*/, (0, generate_1.generate)(config)];
-                case 2:
-                    _a.sent();
-                    return [4 /*yield*/, (0, runAfterCommands_1.runAfterCommands)(config)];
-                case 3:
-                    _a.sent();
-                    return [2 /*return*/];
+                    result = _a.sent();
+                    if (result.stderr) {
+                        error = getError(command, result.stderr);
+                        console.error(error);
+                    }
+                    return [2 /*return*/, result.stdout];
             }
         });
     });
 }
-run()
-    .then(function () {
-    process.exit(0);
-})["catch"](function (error) {
-    console.error(error);
-    process.exit(1);
-});
+exports.runShellCommand = runShellCommand;

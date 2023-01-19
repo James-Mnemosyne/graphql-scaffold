@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -37,35 +36,29 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var runAfterCommands_1 = require("commands/runAfterCommands");
-var runBeforeCommands_1 = require("commands/runBeforeCommands");
-var generate_1 = require("./generate");
-var getConfig_1 = require("./getConfig");
-function run() {
+exports.runAfterCommands = void 0;
+var runShellCommand_1 = require("../../utils/runShellCommand");
+function runAfterCommands(config) {
     return __awaiter(this, void 0, void 0, function () {
-        var config;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var _i, _a, command;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
-                    config = (0, getConfig_1.getConfig)();
-                    return [4 /*yield*/, (0, runBeforeCommands_1.runBeforeCommands)(config)];
+                    _i = 0, _a = config.afterCommands;
+                    _b.label = 1;
                 case 1:
-                    _a.sent();
-                    return [4 /*yield*/, (0, generate_1.generate)(config)];
+                    if (!(_i < _a.length)) return [3 /*break*/, 4];
+                    command = _a[_i];
+                    return [4 /*yield*/, (0, runShellCommand_1.runShellCommand)(command)];
                 case 2:
-                    _a.sent();
-                    return [4 /*yield*/, (0, runAfterCommands_1.runAfterCommands)(config)];
+                    _b.sent();
+                    _b.label = 3;
                 case 3:
-                    _a.sent();
-                    return [2 /*return*/];
+                    _i++;
+                    return [3 /*break*/, 1];
+                case 4: return [2 /*return*/];
             }
         });
     });
 }
-run()
-    .then(function () {
-    process.exit(0);
-})["catch"](function (error) {
-    console.error(error);
-    process.exit(1);
-});
+exports.runAfterCommands = runAfterCommands;

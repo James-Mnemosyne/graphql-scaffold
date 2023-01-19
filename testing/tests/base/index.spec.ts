@@ -1,12 +1,16 @@
 import { generate } from '../../../src/generate';
 import * as fs from 'fs';
 import { Config, ResolverType } from '../../../src/types';
+import { runBeforeCommands } from '../../../src/commands/runBeforeCommands';
+import { runAfterCommands } from '../../../src/commands/runAfterCommands';
 
 const resolverName = 'thing';
 const extensionPath = 'queries/base';
 const baseFilePath = `testing/results/base/graphql`;
 
 const config: Config = {
+  beforeCommands: ['echo "in beforeCommands0"', 'echo "in beforeCommands1"'],
+  afterCommands: ['echo "in afterCommands0"', 'echo "in afterCommands1"'],
   baseFilePath: `${baseFilePath}`,
   resolverFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName}/index.ts`,
   resolverTestFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName}/index.spec.ts`,
@@ -15,6 +19,7 @@ const config: Config = {
   resolverName,
   schemaIndexFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName}/index.ts`,
   schemaFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName}/schema.graphql`,
+  testType: 'spec',
 };
 
 const schemaFileContents = `type Query {
@@ -30,7 +35,9 @@ describe('Query', () => {
     fs.mkdirSync('testing/results/base/graphql/schemas/queries/base/thing', { recursive: true });
     fs.writeFileSync('testing/results/base/graphql/schemas/queries/base/thing/schema.graphql', schemaFileContents);
 
+    await runBeforeCommands(config);
     await generate(config);
+    await runAfterCommands(config);
 
     expect(fs.existsSync(config.authorizerFilePath)).toBeTruthy();
     expect(fs.existsSync('testing/results/base/graphql/authorizers/queries/base/index.ts')).toBeTruthy();

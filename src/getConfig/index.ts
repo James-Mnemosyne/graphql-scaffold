@@ -1,45 +1,15 @@
 import * as fs from 'fs';
 import { Config, ResolverType } from '../types';
-import * as yup from 'yup';
 import * as minimist from 'minimist';
-
-const error = `An error was found while parsing the schema:`;
-
-function getError(extension: string) {
-  return (
-    error +
-    `
-
-${extension}.
-`
-  );
-}
-
-function getRequiredString(name: string) {
-  return yup
-    .string()
-    .min(1, getError(`${name} must be at least 1 character.`))
-    .defined(getError(`${name} is not defined.`))
-    .required(getError(`${name} is required.`));
-}
-
-const configSchema = yup
-  .object({
-    baseFilePath: getRequiredString('baseFilePath'),
-    resolverFilePath: getRequiredString('resolverFilePath'),
-    resolverTestFilePath: getRequiredString('resolverTestFilePath'),
-    authorizerFilePath: getRequiredString('authorizerFilePath'),
-    resolverType: getRequiredString('resolverType'),
-    schemaIndexFilePath: getRequiredString('schemaIndexFilePath'),
-    schemaFilePath: getRequiredString('schemaFilePath'),
-  })
-  .defined()
-  .required();
+import { getFileConfig } from './getFileConfig';
+import { configSchema } from './configSchema';
 
 export function getConfig(): Config {
   const args = minimist(process.argv.slice(2));
   const schemaFilePath = args.schemaFilePath;
-  const testType = args.testType ?? 'spec';
+  const fileConfig = getFileConfig();
+
+  const testType = fileConfig.testType ?? 'spec';
 
   const schemaSplit = schemaFilePath.split('/schemas/');
   if (schemaSplit?.length !== 2) {
@@ -68,7 +38,7 @@ export function getConfig(): Config {
 
   const exists = fs.existsSync(schemaFilePath);
   if (!exists) {
-    throw new Error(error);
+    throw new Error(`${schemaFilePath} does not exist.`);
   }
   const file = fs.readFileSync(schemaFilePath).toString();
   // TODO (Orange): figure out a better way to do this (or at least add validation on only one export)
@@ -80,6 +50,7 @@ export function getConfig(): Config {
   }
 
   const config: Config = {
+    ...fileConfig,
     baseFilePath,
     resolverFilePath,
     resolverTestFilePath,

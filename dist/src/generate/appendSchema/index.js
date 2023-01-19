@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 exports.__esModule = true;
 exports.appendSchema = void 0;
-var fs = require('fs');
-var appendImports_1 = require('../../utils/appendImports');
+var fs = require("fs");
+var appendImports_1 = require("../../utils/appendImports");
 function getSchemaIndexFileBody(config) {
-  var resolverName = config.resolverName;
-  return 'import '.concat(resolverName, " from './schema.graphql';\n\nexport { ").concat(resolverName, ' };\n');
+    var resolverName = config.resolverName;
+    return "import ".concat(resolverName, " from './schema.graphql';\n\nexport { ").concat(resolverName, " };\n");
 }
 function addSchemaIndexFile(config) {
-  var fileBody = getSchemaIndexFileBody(config);
-  fs.writeFileSync(config.schemaIndexFilePath, fileBody);
+    var fileBody = getSchemaIndexFileBody(config);
+    fs.writeFileSync(config.schemaIndexFilePath, fileBody);
 }
 function appendSchema(config) {
-  (0, appendImports_1.appendImports)(config.schemaFilePath, config);
-  addSchemaIndexFile(config);
+    (0, appendImports_1.appendImports)(config.schemaFilePath, config);
+    addSchemaIndexFile(config);
 }
 exports.appendSchema = appendSchema;

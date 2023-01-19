@@ -5,7 +5,13 @@ export enum ResolverType {
   Unknown = 'Unknown',
 }
 
-export interface Config {
+export interface FileConfig {
+  beforeCommands: string[];
+  afterCommands: string[];
+  testType: string;
+}
+
+export type Config = FileConfig & {
   baseFilePath: string;
   resolverFilePath: string;
   resolverTestFilePath: string;
@@ -14,7 +20,7 @@ export interface Config {
   resolverName: string;
   schemaIndexFilePath: string;
   schemaFilePath: string;
-}
+};
 
 export enum FixtureNodeVariation {
   BaseFixtureNode = 'BaseFixtureNode',

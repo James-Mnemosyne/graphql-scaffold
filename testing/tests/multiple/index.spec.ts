@@ -8,6 +8,8 @@ const extensionPath = 'queries/multiple';
 const baseFilePath = `testing/results/multiple/graphql`;
 
 const config0: Config = {
+  beforeCommands: [],
+  afterCommands: [],
   baseFilePath: `${baseFilePath}`,
   resolverFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName0}/index.ts`,
   resolverTestFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName0}/index.spec.ts`,
@@ -16,9 +18,12 @@ const config0: Config = {
   resolverName: resolverName0,
   schemaIndexFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName0}/index.ts`,
   schemaFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName0}/schema.graphql`,
+  testType: 'spec',
 };
 
 const config1: Config = {
+  beforeCommands: [],
+  afterCommands: [],
   baseFilePath: `${baseFilePath}`,
   resolverFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName1}/index.ts`,
   resolverTestFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName1}/index.spec.ts`,
@@ -27,6 +32,7 @@ const config1: Config = {
   resolverName: resolverName1,
   schemaIndexFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName1}/index.ts`,
   schemaFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName1}/schema.graphql`,
+  testType: 'spec',
 };
 
 const schemaFileContents = `type Query {
