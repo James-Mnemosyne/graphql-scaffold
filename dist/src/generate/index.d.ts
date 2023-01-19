@@ -1,2 +1,2 @@
 import { Config } from '../types';
-export declare function generate(config: Config): void;
+export declare function generate(config: Config): Promise<void>;

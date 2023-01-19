@@ -1,8 +1,6 @@
 import { generate } from '../../../src/generate';
 import * as fs from 'fs';
 import { Config, ResolverType } from '../../../src/types';
-import { runBeforeCommands } from '../../../src/commands/runBeforeCommands';
-import { runAfterCommands } from '../../../src/commands/runAfterCommands';
 
 const resolverName = 'thing';
 const extensionPath = 'queries/base';
@@ -35,9 +33,7 @@ describe('Query', () => {
     fs.mkdirSync('testing/results/base/graphql/schemas/queries/base/thing', { recursive: true });
     fs.writeFileSync('testing/results/base/graphql/schemas/queries/base/thing/schema.graphql', schemaFileContents);
 
-    await runBeforeCommands(config);
     await generate(config);
-    await runAfterCommands(config);
 
     expect(fs.existsSync(config.authorizerFilePath)).toBeTruthy();
     expect(fs.existsSync('testing/results/base/graphql/authorizers/queries/base/index.ts')).toBeTruthy();
