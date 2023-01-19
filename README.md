@@ -1,20 +1,21 @@
-# gql-scaffold
+# graphql-scaffold
 
-Npm package for scaffolding files and smoke tests for resolvers.
+Npm package for scaffolding files and tests for resolvers.
 
 This is not completed yet. Rough timeline:
 
 - Invented today.
+- Might add other stuff tomorrow.
 
 ## Links
 
 ### Github
 
-https://github.com/James-Mnemosyne/gql-scaffold/tree/master
+https://github.com/James-Mnemosyne/graphql-scaffold/tree/master
 
 ### NPM
 
-https://www.npmjs.com/package/gql-scaffold
+https://www.npmjs.com/package/graphql-scaffold
 
 ## Overview
 
@@ -30,137 +31,45 @@ You can install this package as a dev dep, or you can install it globally.
 
 ### NPM
 
-`npm i --save-dev gql-scaffold`
+`npm i --save-dev graphql-scaffold`
 
 ### Yarn
 
-`yarn add -D gql-scaffold`
+`yarn add -D graphql-scaffold`
 
 ## Use
+
+Add the following to your package.json scripts:
+
+```
+"scaffold": "graphql-scaffold"
+```
 
 Assume that you have the following schema:
 
 ```
-enum SomethingEnum {
-  Something0
-  Something1
-  Something2
-}
-
-input SomethingInput {
-  value0: SomethingEnum
-  value1: String
-  value2: Int
-  value3: Float
-  value4Email: String!
-}
-
-type SomethingResult {
-  str: String!
-}
-
+# src/graphql/schemas/queries/getSomething/schema.graphql
 type Query {
-  getSomething(input0: SomethingInput!, input1: SomethingInput): SomethingResult
+  getSomething: String
 }
 ```
 
-add a .gqlTestGenerator.json file, containing the following
-
-```
-{
-  "resolverName": "getSomething",
-  "schemaFilePath": "./ohLookADirectory/**/*.graphql",
-  "resolverFilePath": "./directoryOfResolver/resolverFile.ts",
-  "typeFilePath": "./generatedTypesPath/types.generated.ts",
-}
-```
-
-Add a script to your package.json:
-
-```
-  "generateTests": "gql-test-generator",
-```
-
-And run (for npm):
-
-```
-npm run generateTests
-```
-
-And you should have a newly output suite of fixture tests, such as:
-
-```
-
-import { GraphQLResolveInfo } from 'graphql';
-import { getSomething } from './directoryOfResolver/resolverFile.ts';
-import { SomethingEnum } from './generatedTypesPath/types.generated.ts';
-
-...
-
-describe('getSomething smoke tests', () => {
-  beforeAll(() => {
-    // Do something here.
-  });
-
-  beforeEach(() => {
-    // Do something here.
-  });
-
-
-  it('case0', async () => {
-    const params = {"input0":{"value0":SomethingEnum.Something0,"value4Email":""},"input1":{"value0":SomethingEnum.Something0,"value4Email":""}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
-    expect(result).toMatchSnapshot();
-  });
-
-
-
-  it('case1', async () => {
-    const params = {"input0":{"value0":SomethingEnum.Something0,"value3":0,"value4Email":"random string"},"input1":{"value0":SomethingEnum.Something0,"value3":0,"value4Email":"random string"}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
-    expect(result).toMatchSnapshot();
-  });
-
-
-
-  it('case2', async () => {
-    const params = {"input0":{"value0":SomethingEnum.Something0,"value2":null,"value3":-1000.5,"value4Email":""},"input1":{"value0":SomethingEnum.Something0,"value2":null,"value3":-1000.5,"value4Email":""}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
-    expect(result).toMatchSnapshot();
-  });
-
-
-
-  it('case3', async () => {
-    const params = {"input0":{"value0":SomethingEnum.Something0,"value2":-1000,"value4Email":"james@bob.edu"},"input1":{"value0":SomethingEnum.Something0,"value2":-1000,"value4Email":"james@bob.edu"}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
-    expect(result).toMatchSnapshot();
-  });
-
-
-
-  it('case4', async () => {
-    const params = {"input0":{"value0":SomethingEnum.Something0,"value2":-1000,"value3":2000345.7898,"value4Email":"random string"},"input1":{"value0":SomethingEnum.Something0,"value2":-1000,"value3":2000345.7898,"value4Email":"random string"}};
-    const result = await getSomething({}, params, undefined, mockGraphQLResolveInfo)
-    expect(result).toMatchSnapshot();
-  });
-
-...
-
-});
-
-```
+Running `npm run scaffold -- --schemaFilePath src/graphql/schemas/queries/getSomething/schema.graphql` will generate resolvers, tests, authorizers, and an export chain for all of those and the schema.
 
 ## Extended Use
 
 The following flags are now available for convenience:
 
 ```
---config // Used to specify a configuation file.
+--testType // Used to specify the test extension (e.g. spec|test). Default is spec.
 ```
+
+Additionally, graphql types should be generated before running this, so it may be convenient to just include the generation in the script.
 
 Example:
 
 ```
-npm run generateTests -- --config configFiles/graphql/generateTests.json
+"scaffold": "npm run generate-graphql-types && graphql-scaffold --testType test"
 ```
+
+Will regenerate the schema and output test files as index.test.ts
