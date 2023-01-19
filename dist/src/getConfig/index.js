@@ -60,8 +60,7 @@ function getConfig() {
     if (!exists) {
         throw new Error(error);
     }
-    // This seems to be expected, but for the life of me, I cannot figure out why.
-    var file = fs.readFileSync(schemaFilePath);
+    var file = fs.readFileSync(schemaFilePath).toString();
     // TODO (Orange): figure out a better way to do this (or at least add validation on only one export)
     if (!file.toLowerCase().includes(resolverType.toLowerCase())) {
         throw new Error("Invalid schema file. ".concat(resolverType, " is not contained in resolverType directory."));

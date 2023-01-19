@@ -1,6 +1,6 @@
 {
   "name": "graphql-scaffold",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scaffolds resolvers, tests, and file structure from a schema.",
   "main": "dist/src/index.js",
   "scripts": {
