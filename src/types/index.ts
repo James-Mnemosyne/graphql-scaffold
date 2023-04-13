@@ -15,10 +15,10 @@ export interface FileConfig {
 export type Config = FileConfig & {
   resolverFilePath: string;
   resolverTestFilePath: string;
+  resolverE2ETestFilePath: string;
   authorizerFilePath: string;
   resolverType: string;
   resolverName: string;
-  schemaIndexFilePath: string;
   schemaFilePath: string;
 };
 

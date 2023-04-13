@@ -12,10 +12,10 @@ const config: Config = {
   baseFilePath: `${baseFilePath}`,
   resolverFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName}/index.ts`,
   resolverTestFilePath: `${baseFilePath}/resolvers/${extensionPath}/${resolverName}/index.spec.ts`,
+  resolverE2ETestFilePath: `${baseFilePath}/e2eTests/${extensionPath}/${resolverName}/index.spec.ts`,
   authorizerFilePath: `${baseFilePath}/authorizers/${extensionPath}/${resolverName}/index.ts`,
   resolverType: ResolverType.Query,
   resolverName,
-  schemaIndexFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName}/index.ts`,
   schemaFilePath: `${baseFilePath}/schemas/${extensionPath}/${resolverName}/schema.graphql`,
   testType: 'spec',
 };
@@ -43,10 +43,6 @@ describe('Query', () => {
     expect(fs.existsSync(config.resolverTestFilePath)).toBeTruthy();
     expect(fs.existsSync('testing/results/base/graphql/resolvers/queries/base/index.ts')).toBeTruthy();
     expect(fs.existsSync('testing/results/base/graphql/resolvers/queries/index.ts')).toBeTruthy();
-    expect(fs.existsSync(config.schemaIndexFilePath)).toBeTruthy();
-    expect(fs.existsSync('testing/results/base/graphql/schemas/queries/base/index.ts')).toBeTruthy();
-    expect(fs.existsSync('testing/results/base/graphql/schemas/queries/index.ts')).toBeTruthy();
-    expect(fs.existsSync('testing/results/base/graphql/schemas/index.ts')).toBeTruthy();
 
     expect(fs.readFileSync(config.authorizerFilePath).toString()).toMatchSnapshot();
     expect(
@@ -60,9 +56,5 @@ describe('Query', () => {
       fs.readFileSync('testing/results/base/graphql/resolvers/queries/base/index.ts').toString()
     ).toMatchSnapshot();
     expect(fs.readFileSync('testing/results/base/graphql/resolvers/queries/index.ts').toString()).toMatchSnapshot();
-    expect(fs.readFileSync(config.schemaIndexFilePath).toString()).toMatchSnapshot();
-    expect(fs.readFileSync('testing/results/base/graphql/schemas/queries/base/index.ts').toString()).toMatchSnapshot();
-    expect(fs.readFileSync('testing/results/base/graphql/schemas/queries/index.ts').toString()).toMatchSnapshot();
-    expect(fs.readFileSync('testing/results/base/graphql/schemas/index.ts').toString()).toMatchSnapshot();
   });
 });

@@ -1,0 +1,3 @@
+type Query {
+  thing(floatInput: Float!, stringInput: String!, optionalBooleanInput: Boolean!): Int!
+}

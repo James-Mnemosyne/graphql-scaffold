@@ -19,11 +19,7 @@ https://www.npmjs.com/package/graphql-scaffold
 
 ## Overview
 
-Writing tests kind of sucks. Hopefully, this makes it a bit easier to get a comprehensive test setup.
-
-This enables automated generation of smoke tests for a given resolver.
-
-I plan on actively maintaining this. Feel free to contribute.
+It can be difficult maintaining a graphql system that with consistent structure and shape. Code standards and organizational patterns can become complex. This produces everything in a fixed organizational structure, which should help make things a bit better.
 
 ## Install
 
@@ -42,7 +38,7 @@ You can install this package as a dev dep, or you can install it globally.
 Add the following to your package.json scripts:
 
 ```
-"scaffold": "graphql-scaffold"
+"scaffold": "graphql-scaffold --resolver"
 ```
 
 Assume that you have the following schema:
@@ -54,22 +50,20 @@ type Query {
 }
 ```
 
-Running `npm run scaffold -- --schemaFilePath src/graphql/schemas/queries/getSomething/schema.graphql` will generate resolvers, tests, authorizers, and an export chain for all of those and the schema.
+Running `npm run scaffold getSomething` will generate resolvers, tests, authorizers, and an export chain for all of those and the schema.
 
 ## Extended Use
 
-The following flags are now available for convenience:
+The following flags are now available for convenience, by adding a top level .gqlScaffold.json file.
 
 ```
---testType // Used to specify the test extension (e.g. spec|test). Default is spec.
+{
+  "beforeCommands": ["npm run generate-graphql-types"],   # default: []
+  "afterCommands": ["npm run prettier-diff"],             # default: []
+  "baseFilePath": "src/graphql-retail",                   # default: '.'
+  "testType": "test"                                      # default: 'spec'
+}
+
 ```
 
-Additionally, graphql types should be generated before running this, so it may be convenient to just include the generation in the script.
-
-Example:
-
-```
-"scaffold": "npm run generate-graphql-types && graphql-scaffold --testType test"
-```
-
-Will regenerate the schema and output test files as index.test.ts
+This can be useful if, for example, you need to ensure that graphql typing is up to date prior to execution.

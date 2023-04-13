@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 import { Config } from '../../types';
 
-function getResolverTestBody(config) {
+function getResolverTestBody(config: Config, fixture: Object) {
   const resolverName = config.resolverName;
   const lowercaseResolverType = config.resolverType.toLowerCase();
 
-  return `import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'graphql-retail/testing/fixtures/graphql';
+  return `import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'src/graphql-retail/testing/fixtures/graphql';
 import { ${resolverName} } from '.';
 
 /**
@@ -17,7 +17,7 @@ describe('${resolverName} ${lowercaseResolverType}', () => {
   it('Runs on null input.', async () => {
     const response = await ${resolverName}(
       {},
-      null, // This is probably not valid input.
+      ${JSON.stringify(fixture)}, // This is probably not valid input.
       mockGraphQLResolveContext,
       mockGraphQLResolveInfo
     );
@@ -28,8 +28,8 @@ describe('${resolverName} ${lowercaseResolverType}', () => {
 }
 
 // TODO (orange): re-enable ability to parse schema for better handling.
-export function generateResolverTestFile(config: Config): void {
-  const resolverTestBody = getResolverTestBody(config);
+export function generateResolverTestFile(config: Config, fixture: Object): void {
+  const resolverTestBody = getResolverTestBody(config, fixture);
   const fileName = config.resolverTestFilePath;
   fs.writeFileSync(fileName, resolverTestBody);
 }

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Query with only basic object 1`] = `
-"import { AuthenticationContextType } from 'graphql-retail/middleware/authenticate/types';
+"import { AuthenticationContextType } from 'src/graphql-retail/middleware/authenticate/types';
 
 /**
  * Authorizer for thing query
@@ -31,7 +31,7 @@ exports[`Query with only basic object 4`] = `
 `;
 
 exports[`Query with only basic object 5`] = `
-"import { Queries } from 'graphql-retail/types';
+"import { Queries } from 'src/graphql-retail/types';
 
 /**
  * thing query
@@ -49,7 +49,7 @@ export const thing: Queries['thing'] = async function (
 `;
 
 exports[`Query with only basic object 6`] = `
-"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'graphql-retail/testing/fixtures/graphql';
+"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'src/graphql-retail/testing/fixtures/graphql';
 import { thing } from '.';
 
 /**
@@ -61,7 +61,7 @@ describe('thing query', () => {
   it('Runs on null input.', async () => {
     const response = await thing(
       {},
-      null, // This is probably not valid input.
+      {}, // This is probably not valid input.
       mockGraphQLResolveContext,
       mockGraphQLResolveInfo
     );
@@ -78,27 +78,5 @@ exports[`Query with only basic object 7`] = `
 
 exports[`Query with only basic object 8`] = `
 "export * from './base';
-"
-`;
-
-exports[`Query with only basic object 9`] = `
-"import thing from './schema.graphql';
-
-export { thing };
-"
-`;
-
-exports[`Query with only basic object 10`] = `
-"export * from './thing';
-"
-`;
-
-exports[`Query with only basic object 11`] = `
-"export * from './base';
-"
-`;
-
-exports[`Query with only basic object 12`] = `
-"export * from './queries';
 "
 `;

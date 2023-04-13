@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Query with only basic object 1`] = `
+"import { AuthenticationContextType } from 'src/graphql-retail/middleware/authenticate/types';
+
+/**
+ * Authorizer for thing query
+ */
+export async function thing(context: AuthenticationContextType) {
+  // DEAR CODE REVIEWER,
+  // IF YOU ARE SEEING THIS, YOU SHOULD NOT ALLOW THIS THROUGH CODE REVIEW.
+  // THIS IS AN AUTO-GENERATED FUNCTION
+  // AND SHOULD BE REPLACED WITH VALID AUTHENTICATION LOGIC.
+};
+"
+`;
+
+exports[`Query with only basic object 2`] = `
+"export * from './thing';
+"
+`;
+
+exports[`Query with only basic object 3`] = `
+"export * from './withInputs';
+"
+`;
+
+exports[`Query with only basic object 4`] = `
+"export * from './queries';
+"
+`;
+
+exports[`Query with only basic object 5`] = `
+"import { Queries } from 'src/graphql-retail/types';
+
+/**
+ * thing query
+ */
+export const thing: Queries['thing'] = async function (
+  _parent,
+  input,
+  _context
+) {
+  // TODO implement
+  console.log('input', input);
+  throw new Error('Unsupported query thing.')
+};
+"
+`;
+
+exports[`Query with only basic object 6`] = `
+"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'src/graphql-retail/testing/fixtures/graphql';
+import { thing } from '.';
+
+/**
+ * Tests for thing query
+ */
+describe('thing query', () => {
+  beforeAll(async () => {});
+
+  it('Runs on null input.', async () => {
+    const response = await thing(
+      {},
+      {"floatInput":0,"stringInput":"random string","optionalBooleanInput":false}, // This is probably not valid input.
+      mockGraphQLResolveContext,
+      mockGraphQLResolveInfo
+    );
+    expect(response).toEqual(null);
+  });
+});
+"
+`;
+
+exports[`Query with only basic object 7`] = `
+"export * from './thing';
+"
+`;
+
+exports[`Query with only basic object 8`] = `
+"export * from './withInputs';
+"
+`;

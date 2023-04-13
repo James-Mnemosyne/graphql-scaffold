@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Query with only basic object 1`] = `
-"import { AuthenticationContextType } from 'graphql-retail/middleware/authenticate/types';
+"import { AuthenticationContextType } from 'src/graphql-retail/middleware/authenticate/types';
 
 /**
  * Authorizer for thing0 query
@@ -16,7 +16,7 @@ export async function thing0(context: AuthenticationContextType) {
 `;
 
 exports[`Query with only basic object 2`] = `
-"import { AuthenticationContextType } from 'graphql-retail/middleware/authenticate/types';
+"import { AuthenticationContextType } from 'src/graphql-retail/middleware/authenticate/types';
 
 /**
  * Authorizer for thing1 query
@@ -47,7 +47,7 @@ exports[`Query with only basic object 5`] = `
 `;
 
 exports[`Query with only basic object 6`] = `
-"import { Queries } from 'graphql-retail/types';
+"import { Queries } from 'src/graphql-retail/types';
 
 /**
  * thing0 query
@@ -65,7 +65,7 @@ export const thing0: Queries['thing0'] = async function (
 `;
 
 exports[`Query with only basic object 7`] = `
-"import { Queries } from 'graphql-retail/types';
+"import { Queries } from 'src/graphql-retail/types';
 
 /**
  * thing1 query
@@ -83,7 +83,7 @@ export const thing1: Queries['thing1'] = async function (
 `;
 
 exports[`Query with only basic object 8`] = `
-"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'graphql-retail/testing/fixtures/graphql';
+"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'src/graphql-retail/testing/fixtures/graphql';
 import { thing0 } from '.';
 
 /**
@@ -95,7 +95,7 @@ describe('thing0 query', () => {
   it('Runs on null input.', async () => {
     const response = await thing0(
       {},
-      null, // This is probably not valid input.
+      {}, // This is probably not valid input.
       mockGraphQLResolveContext,
       mockGraphQLResolveInfo
     );
@@ -106,7 +106,7 @@ describe('thing0 query', () => {
 `;
 
 exports[`Query with only basic object 9`] = `
-"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'graphql-retail/testing/fixtures/graphql';
+"import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'src/graphql-retail/testing/fixtures/graphql';
 import { thing1 } from '.';
 
 /**
@@ -118,7 +118,7 @@ describe('thing1 query', () => {
   it('Runs on null input.', async () => {
     const response = await thing1(
       {},
-      null, // This is probably not valid input.
+      {}, // This is probably not valid input.
       mockGraphQLResolveContext,
       mockGraphQLResolveInfo
     );
@@ -136,35 +136,5 @@ export * from './thing1';
 
 exports[`Query with only basic object 11`] = `
 "export * from './multiple';
-"
-`;
-
-exports[`Query with only basic object 12`] = `
-"import thing0 from './schema.graphql';
-
-export { thing0 };
-"
-`;
-
-exports[`Query with only basic object 13`] = `
-"import thing1 from './schema.graphql';
-
-export { thing1 };
-"
-`;
-
-exports[`Query with only basic object 14`] = `
-"export * from './thing0';
-export * from './thing1';
-"
-`;
-
-exports[`Query with only basic object 15`] = `
-"export * from './multiple';
-"
-`;
-
-exports[`Query with only basic object 16`] = `
-"export * from './queries';
 "
 `;

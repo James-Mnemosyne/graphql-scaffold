@@ -39,12 +39,14 @@ exports.__esModule = true;
 exports.generate = void 0;
 var runBeforeCommands_1 = require("../commands/runBeforeCommands");
 var runAfterCommands_1 = require("../commands/runAfterCommands");
-var appendSchema_1 = require("./appendSchema");
 var generateAuthorizer_1 = require("./generateAuthorizer");
 var generateResolver_1 = require("./generateResolver");
 var generateResolverTestFile_1 = require("./generateResolverTestFile");
+var generateE2ETestFile_1 = require("./generateE2ETestFile");
+var generateTypes_1 = require("./generateTypes");
 function generate(config) {
     return __awaiter(this, void 0, void 0, function () {
+        var fixture;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -54,17 +56,21 @@ function generate(config) {
                 case 1:
                     _a.sent();
                     console.log('Before commands complete.');
-                    (0, appendSchema_1.appendSchema)(config);
-                    console.log("Exported schema file through ".concat(config.schemaIndexFilePath));
                     (0, generateAuthorizer_1.generateAuthorizer)(config);
                     console.log("Generated authorizer file in ".concat(config.authorizerFilePath, "."));
                     (0, generateResolver_1.generateResolver)(config);
                     console.log("Generated resolver file in ".concat(config.resolverFilePath, "."));
-                    (0, generateResolverTestFile_1.generateResolverTestFile)(config);
+                    return [4 /*yield*/, (0, generateTypes_1.generateFixture)(config)];
+                case 2:
+                    fixture = _a.sent();
+                    console.log("Generated fixture for tests.");
+                    (0, generateResolverTestFile_1.generateResolverTestFile)(config, fixture);
                     console.log("Generated resolver test file in ".concat(config.resolverTestFilePath, "."));
+                    (0, generateE2ETestFile_1.generateE2ETestFile)(config, fixture);
+                    console.log("Generated e2e test file in ".concat(config.resolverE2ETestFilePath, "."));
                     console.log('Running after commands.');
                     return [4 /*yield*/, (0, runAfterCommands_1.runAfterCommands)(config)];
-                case 2:
+                case 3:
                     _a.sent();
                     console.log('After commands complete.');
                     console.log('Finished.');

@@ -6,7 +6,7 @@ function getAuthorizerBody(config) {
   const resolverName = config.resolverName;
   const lowercaseResolverType = config.resolverType.toLowerCase();
 
-  return `import { AuthenticationContextType } from 'graphql-retail/middleware/authenticate/types';
+  return `import { AuthenticationContextType } from 'src/graphql-retail/middleware/authenticate/types';
 
 /**
  * Authorizer for ${resolverName} ${lowercaseResolverType}

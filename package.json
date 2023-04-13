@@ -1,12 +1,12 @@
 {
   "name": "graphql-scaffold",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Scaffolds resolvers, tests, and file structure from a schema.",
   "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "prettier": "prettier --write .",
-    "test": "jest testing/tests/getSchemaFilePath/index.spec.ts",
+    "test": "jest testing/tests",
     "prePublish": "npm run prettier && npm run test && npm run build"
   },
   "keywords": [
@@ -27,6 +27,7 @@
     "graphql": "^16.6.0",
     "graphql-tools": "^8.3.6",
     "minimist": "^1.2.7",
+    "openai": "^3.2.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {

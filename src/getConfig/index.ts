@@ -22,7 +22,6 @@ export async function getConfig(): Promise<Config> {
 
   const baseFilePath = schemaSplit[0];
   const endDirectory = schemaSplit[1].replace(/\/schema.graphql$/, '');
-  const schemaIndexFilePath = schemaFilePath.replace(/\/schema.graphql$/, '/index.ts');
   const endPath = `${endDirectory}/index.ts`;
   // This annoys me, but I also want to one-line it.
   const resolverName = endDirectory.split('/')[endDirectory.split('/').length - 1];
@@ -35,6 +34,7 @@ export async function getConfig(): Promise<Config> {
 
   const resolverFilePath = `${baseFilePath}/resolvers/${endPath}`;
   const resolverTestFilePath = `${baseFilePath}/resolvers/${testEndPath}`;
+  const resolverE2ETestFilePath = `${baseFilePath}/testing/e2eTests/${testEndPath}`;
   const authorizerFilePath = `${baseFilePath}/authorizers/${endPath}`;
 
   const exists = fs.existsSync(schemaFilePath);
@@ -56,10 +56,10 @@ export async function getConfig(): Promise<Config> {
     baseFilePath,
     resolverFilePath,
     resolverTestFilePath,
+    resolverE2ETestFilePath,
     authorizerFilePath,
     resolverType,
     resolverName,
-    schemaIndexFilePath,
     schemaFilePath,
   };
 

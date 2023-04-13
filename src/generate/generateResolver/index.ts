@@ -11,7 +11,7 @@ function getResolverBody(config) {
   const lowercaseResolverType = config.resolverType.toLowerCase();
   const resolverTypeName = getResolverTypeName(config.resolverType);
 
-  return `import { ${resolverTypeName} } from 'graphql-retail/types';
+  return `import { ${resolverTypeName} } from 'src/graphql-retail/types';
 
 /**
  * ${resolverName} ${lowercaseResolverType}

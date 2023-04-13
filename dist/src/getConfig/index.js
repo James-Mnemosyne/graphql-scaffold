@@ -56,7 +56,7 @@ var configSchema_1 = require("./configSchema");
 var getSchemaFilePath_1 = require("./getSchemaFilePath");
 function getConfig() {
     return __awaiter(this, void 0, void 0, function () {
-        var args, fileConfig, schemaFilePath, testType, schemaSplit, baseFilePath, endDirectory, schemaIndexFilePath, endPath, resolverName, testEndPath, resolverType, resolverFilePath, resolverTestFilePath, authorizerFilePath, exists, file, config;
+        var args, fileConfig, schemaFilePath, testType, schemaSplit, baseFilePath, endDirectory, endPath, resolverName, testEndPath, resolverType, resolverFilePath, resolverTestFilePath, resolverE2ETestFilePath, authorizerFilePath, exists, file, config;
         return __generator(this, function (_a) {
             args = minimist(process.argv.slice(2));
             fileConfig = (0, getFileConfig_1.getFileConfig)();
@@ -71,7 +71,6 @@ function getConfig() {
             }
             baseFilePath = schemaSplit[0];
             endDirectory = schemaSplit[1].replace(/\/schema.graphql$/, '');
-            schemaIndexFilePath = schemaFilePath.replace(/\/schema.graphql$/, '/index.ts');
             endPath = "".concat(endDirectory, "/index.ts");
             resolverName = endDirectory.split('/')[endDirectory.split('/').length - 1];
             testEndPath = schemaSplit[1].replace(/\/schema.graphql$/, "/index.".concat(testType, ".ts"));
@@ -82,6 +81,7 @@ function getConfig() {
                     : types_1.ResolverType.Unknown;
             resolverFilePath = "".concat(baseFilePath, "/resolvers/").concat(endPath);
             resolverTestFilePath = "".concat(baseFilePath, "/resolvers/").concat(testEndPath);
+            resolverE2ETestFilePath = "".concat(baseFilePath, "/testing/e2eTests/").concat(testEndPath);
             authorizerFilePath = "".concat(baseFilePath, "/authorizers/").concat(endPath);
             exists = fs.existsSync(schemaFilePath);
             if (!exists) {
@@ -97,7 +97,7 @@ function getConfig() {
             }
             config = __assign(__assign({}, fileConfig), { 
                 // We override this to be the container for the schema directory.
-                baseFilePath: baseFilePath, resolverFilePath: resolverFilePath, resolverTestFilePath: resolverTestFilePath, authorizerFilePath: authorizerFilePath, resolverType: resolverType, resolverName: resolverName, schemaIndexFilePath: schemaIndexFilePath, schemaFilePath: schemaFilePath });
+                baseFilePath: baseFilePath, resolverFilePath: resolverFilePath, resolverTestFilePath: resolverTestFilePath, resolverE2ETestFilePath: resolverE2ETestFilePath, authorizerFilePath: authorizerFilePath, resolverType: resolverType, resolverName: resolverName, schemaFilePath: schemaFilePath });
             configSchema_1.configSchema.validateSync(config);
             return [2 /*return*/, config];
         });

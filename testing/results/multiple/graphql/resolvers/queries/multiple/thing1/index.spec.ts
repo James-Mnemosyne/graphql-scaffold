@@ -1,4 +1,4 @@
-import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'graphql-retail/testing/fixtures/graphql';
+import { mockGraphQLResolveContext, mockGraphQLResolveInfo } from 'src/graphql-retail/testing/fixtures/graphql';
 import { thing1 } from '.';
 
 /**
@@ -10,7 +10,7 @@ describe('thing1 query', () => {
   it('Runs on null input.', async () => {
     const response = await thing1(
       {},
-      null, // This is probably not valid input.
+      {}, // This is probably not valid input.
       mockGraphQLResolveContext,
       mockGraphQLResolveInfo
     );

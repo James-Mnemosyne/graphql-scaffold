@@ -1,10 +1,14 @@
-import { Queries } from 'graphql-retail/types';
+import { Queries } from 'src/graphql-retail/types';
 
 /**
  * thing0 query
  */
-export const thing0: Queries['thing0'] = async function (_parent, input, _context) {
+export const thing0: Queries['thing0'] = async function (
+  _parent,
+  input,
+  _context
+) {
   // TODO implement
   console.log('input', input);
-  throw new Error('Unsupported query thing0.');
+  throw new Error('Unsupported query thing0.')
 };
