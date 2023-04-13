@@ -16,9 +16,9 @@ export declare const configSchema: import('yup/lib/object').RequiredObjectSchema
     baseFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     resolverFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     resolverTestFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
+    resolverE2ETestFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     authorizerFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     resolverType: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
-    schemaIndexFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     schemaFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     testType: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
   },
@@ -39,9 +39,9 @@ export declare const configSchema: import('yup/lib/object').RequiredObjectSchema
     baseFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     resolverFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     resolverTestFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
+    resolverE2ETestFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     authorizerFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     resolverType: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
-    schemaIndexFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     schemaFilePath: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
     testType: import('yup/lib/string').RequiredStringSchema<string, import('yup/lib/types').AnyObject>;
   }>

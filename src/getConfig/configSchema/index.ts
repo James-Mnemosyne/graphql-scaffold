@@ -27,9 +27,9 @@ export const configSchema = yup
     baseFilePath: getRequiredString('baseFilePath'),
     resolverFilePath: getRequiredString('resolverFilePath'),
     resolverTestFilePath: getRequiredString('resolverTestFilePath'),
+    resolverE2ETestFilePath: getRequiredString('resolverTestFilePath'),
     authorizerFilePath: getRequiredString('authorizerFilePath'),
     resolverType: getRequiredString('resolverType'),
-    schemaIndexFilePath: getRequiredString('schemaIndexFilePath'),
     schemaFilePath: getRequiredString('schemaFilePath'),
     testType: getRequiredString('testType'),
   })
